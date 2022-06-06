@@ -1,0 +1,39 @@
+REQUISITOS E PROCESSOS PARA CONCILIAÇÃO DO CNAB ATRAVES DOS DADOS DO FUNDO
+
+1. Extração do arquivo no site do fundo (formato .xls?)
+2. Elaboracao do frame para conciliar com o controle da ulend
+    a. aplicar mesma formatação do arquivo extraido do fundo
+3. Comparar os dados/linha do CNAB para realizar a conciliacao
+    a. se toda linha igual (ou algums parametros definidos) - ok
+    b. se houver divergencia aponta uma flag para verificar/analisar
+
+Columns:
+
+NOME_FUNDO;
+DOC_FUNDO;
+DATA_FUNDO;
+NOME_ORIGINADOR;
+DOC_ORIGINADOR;
+NOME_CEDENTE;
+DOC_CEDENTE;
+NOME_SACADO;
+DOC_SACADO;
+SEU_NUMERO;
+NU_DOCUMENTO;
+TIPO_RECEBIVEL;
+VALOR_NOMINAL;
+VALOR_PRESENTE;
+VALOR_AQUISICAO;
+VALOR_PDD;
+FAIXA_PDD;
+DATA_REFERENCIA;
+DATA_VENCIMENTO_ORIGINAL;
+DATA_VENCIMENTO_AJUSTADA;
+DATA_EMISSAO;
+DATA_AQUISICAO;
+PRAZO;
+PRAZO_ATUAL;
+SITUACAO_RECEBIVEL;
+TAXA_CESSAO;
+TX_RECEBIVEL;
+COOBRIGACAO
