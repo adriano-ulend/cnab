@@ -6,15 +6,17 @@ def cnab():
 
         sheet = pd.read_csv(file, header=0, sep=';')
         df = pd.DataFrame(sheet)
-        for row in df.iterrows():
-            print(row['NOME_CEDENTE'])
+        df2 = pd
+        df_selected = []
+        list_selected = []
 
-        # for col, row in df.iteritems():
-        #     if col['NOME_CEDENTE'] == 'KAIIMA BRASIL SEMENTES LTDA.':
-        #         print(col, ' - ', row)
+        for e, row in enumerate(df.iterrows()):
+            if row[1][7] =='KAIIMA BRASIL SEMENTES LTDA.':
+                df_selected.append(pd.DataFrame.to_json(row[1]))
 
+                df2.concat(pd.DataFrame(row[1]), axis=0)
 
-        # if row[4] == 'KAIIMA BRASIL SEMENTES LTDA.':
+        # return df_selected
 
         # df['VALIDATION'] = 'NA'
         # # print(df)
