@@ -1,8 +1,10 @@
+import json
+
 import pandas as pd
 from datetime import date
 
 def cnab():
-    with open('//home/adriano/dev/projects/cnab/Estoque_FIDC ULEND_001.csv', 'r', encoding='ISO-8859-1') as file:
+    with open('//home/adriano/dev/projects/cnab/fdic_06-06.csv', 'r', encoding='ISO-8859-1') as file:
 
         sheet = pd.read_csv(file, header=0, sep=';')
         df = pd.DataFrame(sheet)
@@ -14,9 +16,12 @@ def cnab():
             if row[1][7] =='KAIIMA BRASIL SEMENTES LTDA.':
                 df_selected.append(pd.DataFrame.to_json(row[1]))
 
-                df2.concat(pd.DataFrame(row[1]), axis=0)
+        # print(df_selected)
+        for item in df_selected:
+            dict_item = json.loads(item)
+            print(type(dict_item))
 
-        # return df_selected
+        # return df2
 
         # df['VALIDATION'] = 'NA'
         # # print(df)
@@ -74,11 +79,9 @@ def cnab():
 if __name__ == '__main__':
     print(cnab())
 
-
-
 # TO-DO:
-# 1. Puxar row de acordo com condicional/filtro de valores de determinada coluna
-# 2. Adicionar linhas selecionadas a um novo dataframe
-# 3. A partir do novo dataframe extrair dados para o cnab (fdic_data)
-# 4. verificar retorno das defs para ser inserida no cnab
-# 5. check na montagem final do cnab (documento em .txt)
+# OK 1. Puxar row de acordo com condicional/filtro de valores de determinada coluna
+# OK 2. Adicionar linhas selecionadas a um novo dataframe (replace por uma lista com json - salvar no mongo)
+# ok 3. A partir do novo dataframe extrair dados para o cnab (fdic_data)
+# 4. verificar retorno das defs da classe para ser inserida no cnab (def main() antes do if)
+# 5. check no doc final do cnab (documento em .txt)
